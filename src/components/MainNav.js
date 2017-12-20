@@ -1,7 +1,5 @@
 import {connect} from 'react-redux';
 import store from '../store/index';
-import {loadTrainer} from "../actions/trainer-actions";
-var RenderMainNav = require('./RenderMainNav');
 var React = require('react');
 var NavLink = require('react-router-dom').NavLink;
 

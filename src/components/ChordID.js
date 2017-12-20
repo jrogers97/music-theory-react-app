@@ -23,7 +23,6 @@ class ChordID extends React.Component {
   }
 
   render() {
-    console.log("chordID props=", this.props);
     return (
       <div className = "chord-id-container"> 
         <div className = "music-square"> 
@@ -45,4 +44,3 @@ const mapStateToProps = function(store) {
 };
 
 export default connect(mapStateToProps)(ChordID);
-// export default ChordID;
