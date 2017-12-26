@@ -3,25 +3,27 @@ import store from '../store/index';
 import {connect} from 'react-redux';
 var React = require('react');
 
-class Answers extends React.Component {
+class ChordIDAnswers extends React.Component {
 	constructor(props) {
 		super(props);
 		this.state = {};
-		// this.revealAnswers = this.revealAnswers.bind(this);
 	}
 
 	componentDidUpdate() {
-		var old_answers = document.getElementsByClassName("answer");
+		var old_answers = document.getElementsByClassName("answer-list-item");
 		Array.prototype.forEach.call(old_answers, function(item) {
 			item.classList.remove('correct-answer');
 			item.classList.remove('incorrect-answer');
 		})	
 	}
 
+	static numToString(num) {
+		return((num + 10).toString(36).toUpperCase());
+	}
+
 	static revealAnswers(correct_answer) {
 		var answers = document.getElementsByClassName("answer");
 		
-		console.log("correct answer: ",correct_answer);
 		Array.prototype.forEach.call(answers, function(item) {
     		if (item.innerText === correct_answer) {
     			document.getElementById(correct_answer).classList.add('correct-answer');
@@ -41,16 +43,16 @@ class Answers extends React.Component {
 			var answers = ["Major", "Minor", "Augmented", "Diminished"]
 		};
 
-
 		return (
 			<ul className = "answers-list">
 	          {answers.map(function(item,index) {
 	          	return (
-	          		<li className="answer"
+	          		<li className="answer-list-item"
 	          			id={item}
 	          			key={item}
-	          			onClick = {() => Answers.revealAnswers(correct_answer) }>
-          				<span>{item}</span>
+	          			onClick = {() => ChordIDAnswers.revealAnswers(correct_answer) }>
+          				<span className="option-number">{ChordIDAnswers.numToString(index) + "."}</span>
+          				<span className="answer">{item}</span>
           			</li>	
 	          	);
 	          })}
@@ -65,4 +67,4 @@ const mapStateToProps = function(store) {
 	};
 };
 
-export default connect(mapStateToProps)(Answers);
+export default connect(mapStateToProps)(ChordIDAnswers);

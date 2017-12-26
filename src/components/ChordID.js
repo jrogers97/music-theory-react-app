@@ -1,5 +1,6 @@
 import '../index.css';
 import CreateChord from './CreateChord';
+import ChordIDAnswers from './ChordIDAnswers';
 import {connect} from 'react-redux';
 import store from '../store/index';
 import {loadChord} from '../actions/chord-actions';
@@ -25,13 +26,22 @@ class ChordID extends React.Component {
   render() {
     return (
       <div className = "chord-id-container"> 
+        <div id="header-container"> <p id="header"> Identify the chord quality.</p> </div>
         <div className = "music-square"> 
           {!this.props.chord ? 
             null :
             <CreateChord /> 
           }
         </div>
-        <button id="next-button" onClick = { this.getChord }> Next </button>
+        <div className = "answer-area">
+          {!this.props.chord ?
+            null :
+            <ChordIDAnswers />
+          }
+        </div>
+        <div className = "next-button-container">
+          <button id="next-button" onClick = { this.getChord }> Next </button>
+        </div>
       </div> 
     );
   }

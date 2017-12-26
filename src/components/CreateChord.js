@@ -19,7 +19,6 @@ class CreateChord extends React.Component {
 	
 		const chord = this.props.chord;
 		const acc = chord.accidentals;
-		const chord_quality = chord.quality;
 		var chord_no_acc = new StaveNote({
 			keys: chord.keys,
 			duration: "w" 
@@ -36,7 +35,6 @@ class CreateChord extends React.Component {
 		return (
 		  <div>
 	        <Notes chord={chord_final} />
-	        <p style={{fontSize: "24px"}}> {chord_quality} </p>
 	      </div>
 		)
 	  }

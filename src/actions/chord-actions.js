@@ -4,3 +4,10 @@ export function loadChord(data) {
         chord: data
     };
 }
+
+export function loadChordAudio(data) {
+	return {
+		type: 'LOAD_CHORD_AUDIO',
+		chord_audio: data
+	};
+}
