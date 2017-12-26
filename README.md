@@ -1,4 +1,4 @@
-Live prototype available at [www.theorytrainer.com](theorytrainer.com).
+Live prototype available at [www.theorytrainer.com](https://theorytrainer.com).
 
 
 
