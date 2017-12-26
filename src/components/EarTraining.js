@@ -25,7 +25,6 @@ class EarTraining extends React.Component {
 	}
 
    render() {
-   	// console.log(this.props.chord_audio);
    	if (this.props.chord_audio) {
 	   	var path = this.props.chord_audio.path;
 	   	var audio_file = require("../util/audio/" + path);
