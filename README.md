@@ -1,5 +1,5 @@
 ## Live prototype available at [www.theorytrainer.com](http://theorytrainer.com).
-(with Ear Training functionality disabled)
+
 
 
 
